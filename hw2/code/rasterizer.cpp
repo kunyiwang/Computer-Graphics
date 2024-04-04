@@ -66,7 +66,8 @@ static bool insideTriangle(int x, int y, const Vector3f* _v)
     float z2 = v2to1.x()*v2toP.y() - v2to1.y()*v2toP.x();
     float z3 = v0to2.x()*v0toP.y() - v0to2.y()*v0toP.x();
 
-    // Use sign of cross product to check
+    // Use sign of cross product to check where p is inside the Triangle,
+    // requiring Z1/2/3's directions to be the same
     if ((z1>0 && z2>0 && z3>0) || (z1<0 && z2<0 && z3<0)) {
         return true;
     } else {
